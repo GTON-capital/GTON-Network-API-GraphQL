@@ -1,0 +1,83 @@
+{
+  "app_name": "My GraphQL API for Opera MainNet",
+  "me": {
+    "address": "0xE8E2ab527D1fDbCe570B221977BB5c3f12dFa1DA",
+    "pkey": "0xaa682338447d15ac4462d938716c120d085a0db81d3945b18017ae0788a121a7"
+  },
+  "server": {
+    "bind": "0.0.0.0:16761",
+    "peers": [],
+    "origin": "https://xapi.fantom.network",
+    "cors_origins": ["*"],
+    "write_timeout": 30,
+    "resolver_timeout": 240
+  },
+  "node": {
+    "url": "wss://rpc.gton.network/socket"
+  },
+  "p2p": {
+    "bind_udp": "0.0.0.0:19173",
+    "geo_db": "city.mmdb",
+    "bootstrap": [
+      "enode://03c70d4597d731ef182678b7664f2a4a3add07056f23d4e01aba86f066080d18fa13abbd2e13e9d4ea762a2715a983b5ac6151162d05ee0434f1847da1a626e9@34.242.220.16:5050",
+      "enode://01c64d1a9dd8a65c56f2d4e373795eb6efd27b714b2b5999363a42a0edc39d7417a431416ceb5c67b1a170983af109e8a15d0c2d44a2ac41ecfb5c23c1a1a48a@3.35.200.210:5050",
+      "enode://7044c88daa5df059e2f7a2667471a8149a5cf66e68643dcb86f399d48c4ff6475b73ee91486ea830d225f7f78a2fdf955208673da51c6852230c3a90a3701c06@3.1.103.70:5050",
+      "enode://594d26c2338566daca9391d73f1b1821bb0b454e6f3d48715116bf42f320924d569534c143b640feec8a8eaa137a0b822426fb62b52a90162270ea5868bdc37c@18.138.254.181:5050",
+      "enode://339e331912e5239a9e13eb82b47be58ea4d3946e91caa2992103a8d4f0226c1e86f9134822d5b238f25c9cbdd473f806caa8e4f8ef1748a6c66395f4bf0dd569@54.66.206.151:5050"
+    ]
+  },
+  "log": {
+    "level": "Info"
+  },
+  "db": {
+    "url": "mongodb://db:27017",
+    "db": "mainnet"
+  },
+  "compiler": {
+    "temp": "/tmp/solidity",
+    "sol": "/usr/local/bin/solc"
+  },
+  "repository": {
+    "stakers": 1
+  },
+  "staking": {
+    "sfc": "0xFC00FACE00000000000000000000000000000000",
+    "sti": "0x92ffad75b8a942d149621a39502cdd8ad1dd57b4",
+    "tokenizer": "0xc3e8459464a0e8fd08d767a16b5c211b45ac961f",
+    "token": "0x69c744d3444202d35a2783929a0f930f2fbb05ad"
+  },
+  "defi": {
+    "fmint": {
+      "address_provider": "0xcb20a1a22976764b882c2f03f0c8523f3df54b10"
+    },
+    "uniswap": {
+      "core": "0xbfd1ce8e6d85e911e80c169293d5c1f5c950fe03",
+      "router": "0x67a937ea41cd05ec8c832a044afc0100f30aa4b5",
+      "whitelist": ["0x34bf23e2f08bfe00cae2adc15d4b47cf8b9ee7bf"]
+    },
+    "symbols": [
+      "USD",
+      "EUR",
+      "CNY",
+      "GBP",
+      "JPY",
+      "KRW",
+      "AUD",
+      "CAD",
+      "CHF",
+      "AED"
+    ]
+  },
+  "governance": {
+    "contracts": [
+      {
+        "address": "0x7c3b85a71e4fce1209a81d67f1af46b5a068770e",
+        "governable": "0xc5bb923137d25f7cbc60081f4e33fde9b37adffe",
+        "templates": "0x7403b7d2d0645f576ef5f702736390ad9fb6f6b0",
+        "name": "Core and SFC",
+        "type": "sfc"
+      }
+    ]
+  },
+  "erc20_tokens_file": "tokens.json"
+}
