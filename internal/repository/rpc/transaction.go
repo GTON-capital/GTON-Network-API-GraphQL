@@ -27,7 +27,7 @@ func (ftm *FtmBridge) Transaction(hash *common.Hash) (*types.Transaction, error)
 
 	// call for data
 	var trx types.Transaction
-	err := ftm.rpc.Call(&trx, "ftm_getTransactionByHash", hash)
+	err := ftm.rpc.Call(&trx, "eth_getTransactionByHash", hash)
 	if err != nil {
 		ftm.log.Error("transaction could not be extracted")
 		return nil, err
@@ -46,7 +46,7 @@ func (ftm *FtmBridge) Transaction(hash *common.Hash) (*types.Transaction, error)
 		}
 
 		// call for the transaction receipt data
-		err := ftm.rpc.Call(&rec, "ftm_getTransactionReceipt", hash)
+		err := ftm.rpc.Call(&rec, "eth_getTransactionReceipt", hash)
 		if err != nil {
 			ftm.log.Errorf("can not get receipt for transaction %s", hash)
 			return nil, err

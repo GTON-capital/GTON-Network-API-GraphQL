@@ -34,7 +34,7 @@ func (ftm *FtmBridge) GasPrice() (hexutil.Big, error) {
 	var price hexutil.Big
 	var try uint8
 	for {
-		err := ftm.rpc.Call(&price, "ftm_gasPrice")
+		err := ftm.rpc.Call(&price, "eth_gasPrice")
 		if err != nil {
 			ftm.log.Error("current gas price could not be obtained")
 			return price, err
@@ -70,7 +70,7 @@ func (ftm *FtmBridge) GasEstimate(trx *struct {
 	ftm.log.Debugf("calling for gas amount estimation")
 
 	var val hexutil.Uint64
-	err := ftm.rpc.Call(&val, "ftm_estimateGas", trx)
+	err := ftm.rpc.Call(&val, "eth_estimateGas", trx)
 	if err != nil {
 		// missing required argument? incompatibility between old and new RPC API
 		if strings.Contains(err.Error(), "missing value") {
@@ -99,7 +99,7 @@ func (ftm *FtmBridge) GasEstimateWithBlock(trx *struct {
 	ftm.log.Debugf("calling for gas amount estimation with block details")
 
 	var val hexutil.Uint64
-	err := ftm.rpc.Call(&val, "ftm_estimateGas", trx, BlockTypeLatest)
+	err := ftm.rpc.Call(&val, "eth_estimateGas", trx, BlockTypeLatest)
 	if err != nil {
 		// return error
 		ftm.log.Errorf("can not estimate gas; %s", err.Error())
