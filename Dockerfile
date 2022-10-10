@@ -8,6 +8,7 @@ RUN go mod download && go mod verify
 
 COPY cmd /app/cmd
 COPY doc /app/doc
+COPY geodb /app/geodb
 COPY internal /app/internal
 COPY Makefile /app
 
