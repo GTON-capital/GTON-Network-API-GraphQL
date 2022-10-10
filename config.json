@@ -13,7 +13,7 @@
     "resolver_timeout": 240
   },
   "node": {
-    "url": "https://rpc.gton.network/"
+    "url": "wss://rpc.gton.network/socket"
   },
   "p2p": {
     "bind_udp": "0.0.0.0:19173",
