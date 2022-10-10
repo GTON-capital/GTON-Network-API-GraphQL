@@ -7,9 +7,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - ./geodb:/geodb
-      - ./doc:/doc
     ports:
       - 16761:16761
     depends_on:
