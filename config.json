@@ -27,7 +27,7 @@
     ]
   },
   "log": {
-    "level": "Info"
+    "level": "Debug"
   },
   "db": {
     "url": "mongodb://db:27017",
