@@ -79,5 +79,5 @@
       }
     ]
   },
-  "erc20_tokens_file": "tokens.json"
+  "erc20_tokens_file": "doc/tokens.json"
 }

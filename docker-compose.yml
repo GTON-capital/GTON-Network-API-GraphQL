@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./db:/db
+      - ./doc:/doc
     ports:
       - 16761:16761
     depends_on:
