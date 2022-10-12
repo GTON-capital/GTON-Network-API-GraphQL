@@ -58,7 +58,7 @@ func (eps *epochScanner) run() {
 	eps.mgr.started(eps)
 	go eps.dequeue()
 	eps.mgr.started(eps)
-	go eps.execute()
+	// go eps.execute()
 }
 
 // close terminates the block dispatcher.
