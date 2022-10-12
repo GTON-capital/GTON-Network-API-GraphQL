@@ -1,9 +1,10 @@
 package config
 
 import (
+	"time"
+
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/spf13/viper"
-	"time"
 )
 
 // Default values of configuration options
@@ -63,19 +64,19 @@ const (
 	defApiStateOrigin = "https://localhost"
 
 	// defSfcContract is the default address of the SFC contract
-	defSfcContract = "0xFC00FACE00000000000000000000000000000000"
+	// defSfcContract = "0xFC00FACE00000000000000000000000000000000"
 
 	// defStiContract holds deployment address of the Staker Info smart contract.
-	defStiContract = "0x92ffad75b8a942d149621a39502cdd8ad1dd57b4"
+	// defStiContract = "0x92ffad75b8a942d149621a39502cdd8ad1dd57b4"
 
 	// defDefiFMintAddressProvider represents the address of the fMintAddressProvider
-	defDefiFMintAddressProvider = "0x730e27f6c52d07b1a6ab39b639b617dc566c91af"
+	// defDefiFMintAddressProvider = "0x730e27f6c52d07b1a6ab39b639b617dc566c91af"
 
 	// defDefiFMintAddressProvider represents the address of the fMintAddressProvider
-	defDefiUniswapCore = EmptyAddress
+	// defDefiUniswapCore = EmptyAddress
 
 	// defDefiFMintAddressProvider represents the address of the fMintAddressProvider
-	defDefiUniswapRouter = EmptyAddress
+	// defDefiUniswapRouter = EmptyAddress
 
 	// defTokenLogoFilePath represents the default path to the tokens map file
 	defTokenLogoFilePath = "tokens.json"
@@ -135,15 +136,15 @@ func applyDefaults(cfg *viper.Viper) {
 	cfg.SetDefault(keyCorsAllowOrigins, defCorsAllowOrigins)
 
 	// staking configuration defaults
-	cfg.SetDefault(keyStakingSfcContract, defSfcContract)
-	cfg.SetDefault(keyStakingStiContract, defStiContract)
-	cfg.SetDefault(keyStakingTokenizerContract, EmptyAddress)
-	cfg.SetDefault(keyStakingERC20Token, EmptyAddress)
+	// cfg.SetDefault(keyStakingSfcContract, defSfcContract)
+	// cfg.SetDefault(keyStakingStiContract, defStiContract)
+	// cfg.SetDefault(keyStakingTokenizerContract, EmptyAddress)
+	// cfg.SetDefault(keyStakingERC20Token, EmptyAddress)
 
 	// DeFi configuration
-	cfg.SetDefault(keyDefiFMintAddressProvider, defDefiFMintAddressProvider)
-	cfg.SetDefault(keyDefiUniswapCore, defDefiUniswapCore)
-	cfg.SetDefault(keyDefiUniswapRouter, defDefiUniswapRouter)
+	// cfg.SetDefault(keyDefiFMintAddressProvider, defDefiFMintAddressProvider)
+	// cfg.SetDefault(keyDefiUniswapCore, defDefiUniswapCore)
+	// cfg.SetDefault(keyDefiUniswapRouter, defDefiUniswapRouter)
 
 	// P2P defaults
 	cfg.SetDefault(keyP2PBindUDP, "0.0.0.0:19173")
