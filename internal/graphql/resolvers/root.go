@@ -5,11 +5,11 @@ import (
 	"fantom-api-graphql/cmd/apiserver/build"
 	"fantom-api-graphql/internal/config"
 	"fantom-api-graphql/internal/logger"
-	"fantom-api-graphql/internal/svc"
 	"fantom-api-graphql/internal/types"
 	"fmt"
-	"golang.org/x/sync/singleflight"
 	"sync"
+
+	"golang.org/x/sync/singleflight"
 )
 
 const (
@@ -91,9 +91,10 @@ func New() ApiResolver {
 
 	// pass subscription data source channels to the service manager
 	// to get them filled with relevant data
-	sm := svc.Manager()
-	sm.SetBlockChannel(rs.onBlockEvents)
-	sm.SetTrxChannel(rs.onTrxEvents)
+	// TODO: !!!
+	// sm := svc.Manager()
+	// sm.SetBlockChannel(rs.onBlockEvents)
+	// sm.SetTrxChannel(rs.onTrxEvents)
 
 	// handle broadcast and subscriptions in a separate routine
 	rs.wg.Add(1)
