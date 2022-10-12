@@ -2,22 +2,21 @@
 package resolvers
 
 import (
-	"fantom-api-graphql/internal/config"
 	"fantom-api-graphql/internal/repository"
 
-	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 
 // CurrentState represents resolvable state detail.
 type CurrentState struct {
-	config.Staking
+	// config.Staking
 }
 
 // State resolves details of the current state of the blockchain and network.
-// func (rs *rootResolver) State() (CurrentState, error) {
-// 	return CurrentState{cfg.Staking}, nil
-// }
+func (rs *rootResolver) State() (CurrentState, error) {
+	// cfg.Staking
+	return CurrentState{}, nil
+}
 
 // SealedEpoch resolves the most recent sealed epoch details.
 func (cst CurrentState) SealedEpoch() (Epoch, error) {
@@ -56,9 +55,9 @@ func (cst CurrentState) Transactions() (hexutil.Uint64, error) {
 }
 
 // SfcContractAddress resolves address of the SFC contract.
-func (cst CurrentState) SfcContractAddress() common.Address {
-	return cst.SFCContract
-}
+// func (cst CurrentState) SfcContractAddress() common.Address {
+// 	return cst.SFCContract
+// }
 
 // SfcLockingEnabled indicates if the stake locking has been enabled in SFC contract.
 func (cst CurrentState) SfcLockingEnabled() (bool, error) {
