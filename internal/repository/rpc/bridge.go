@@ -91,8 +91,8 @@ func New(cfg *config.Config, log logger.Logger) (*FtmBridge, error) {
 	log.Noticef("using signature address %s", br.sigConfig.Address.String())
 
 	// add the bridge ref to the fMintCfg and return the instance
-	br.fMintCfg.bridge = br
-	br.run()
+	// br.fMintCfg.bridge = br
+	// br.run()
 	return br, nil
 }
 
