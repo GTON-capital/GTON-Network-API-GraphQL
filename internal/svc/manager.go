@@ -2,7 +2,6 @@
 package svc
 
 import (
-	"fantom-api-graphql/internal/config"
 	"fantom-api-graphql/internal/repository"
 	"fantom-api-graphql/internal/types"
 	"fmt"
@@ -121,9 +120,9 @@ func (mgr *ServiceManager) init() {
 	mgr.svc = append(mgr.svc, &epochScanner{service: service{mgr: mgr}})
 
 	// make staker information scanner only if we have the contract address
-	if cfg.Staking.StiContract.String() != config.EmptyAddress {
-		mgr.svc = append(mgr.svc, &stiScanner{service: service{mgr: mgr}})
-	}
+	// if cfg.Staking.StiContract.String() != config.EmptyAddress {
+	// 	mgr.svc = append(mgr.svc, &stiScanner{service: service{mgr: mgr}})
+	// }
 
 	// make gas price suggestion monitor
 	mgr.svc = append(mgr.svc, &gpsMonitor{service: service{mgr: mgr}})

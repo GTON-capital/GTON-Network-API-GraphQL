@@ -108,7 +108,7 @@ func newRepository() Repository {
 		cfg:   cfg,
 
 		// get the map of governance contracts
-		govContracts: governanceContractsMap(cfg.Governance),
+		// govContracts: governanceContractsMap(cfg.Governance),
 
 		// keep reference to the SOL compiler
 		solCompiler: cfg.Compiler.DefaultSolCompilerPath,

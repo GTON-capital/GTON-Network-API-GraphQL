@@ -9,11 +9,10 @@ results. BigCache for in-memory object storage to speed up loading of frequently
 package repository
 
 import (
-	"bytes"
 	"fantom-api-graphql/internal/types"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
 	"math/big"
+
+	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 
 // sfcDecimalUnit represents decimal units adjustment used by SFC contract
@@ -150,9 +149,9 @@ func (p *proxy) LockingAllowed() (bool, error) {
 }
 
 // IsSfcContract returns true if the given address points to the SFC contract.
-func (p *proxy) IsSfcContract(addr *common.Address) bool {
-	return bytes.Equal(addr.Bytes(), p.cfg.Staking.SFCContract.Bytes())
-}
+// func (p *proxy) IsSfcContract(addr *common.Address) bool {
+// 	return bytes.Equal(addr.Bytes(), p.cfg.Staking.SFCContract.Bytes())
+// }
 
 // LastKnownEpoch returns the id of the last known and scanned epoch.
 func (p *proxy) LastKnownEpoch() (uint64, error) {

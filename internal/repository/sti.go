@@ -9,9 +9,8 @@ results. BigCache for in-memory object storage to speed up loading of frequently
 package repository
 
 import (
-	"bytes"
 	"fantom-api-graphql/internal/types"
-	"github.com/ethereum/go-ethereum/common"
+
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 
@@ -37,6 +36,6 @@ func (p *proxy) RetrieveStakerInfo(id *hexutil.Big) *types.StakerInfo {
 }
 
 // IsStiContract returns true if the given address points to the STI contract.
-func (p *proxy) IsStiContract(addr *common.Address) bool {
-	return bytes.Equal(addr.Bytes(), p.cfg.Staking.StiContract.Bytes())
-}
+// func (p *proxy) IsStiContract(addr *common.Address) bool {
+// 	return bytes.Equal(addr.Bytes(), p.cfg.Staking.StiContract.Bytes())
+// }

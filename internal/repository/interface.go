@@ -13,10 +13,11 @@ import (
 	"fantom-api-graphql/internal/repository/p2p"
 	"fantom-api-graphql/internal/repository/rpc/contracts"
 	"fantom-api-graphql/internal/types"
-	"github.com/ethereum/go-ethereum/p2p/enode"
 	"math/big"
 	"net"
 	"time"
+
+	"github.com/ethereum/go-ethereum/p2p/enode"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
@@ -140,10 +141,10 @@ type Repository interface {
 	LockingAllowed() (bool, error)
 
 	// IsSfcContract returns true if the given address points to the SFC contract.
-	IsSfcContract(*common.Address) bool
+	// IsSfcContract(*common.Address) bool
 
 	// IsStiContract returns true if the given address points to the STI contract.
-	IsStiContract(*common.Address) bool
+	// IsStiContract(*common.Address) bool
 
 	// StoreTransaction adds a new incoming transaction from blockchain to the repository.
 	StoreTransaction(*types.Block, *types.Transaction) error

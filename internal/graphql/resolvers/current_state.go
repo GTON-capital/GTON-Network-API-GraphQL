@@ -4,6 +4,7 @@ package resolvers
 import (
 	"fantom-api-graphql/internal/config"
 	"fantom-api-graphql/internal/repository"
+
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
@@ -14,9 +15,9 @@ type CurrentState struct {
 }
 
 // State resolves details of the current state of the blockchain and network.
-func (rs *rootResolver) State() (CurrentState, error) {
-	return CurrentState{cfg.Staking}, nil
-}
+// func (rs *rootResolver) State() (CurrentState, error) {
+// 	return CurrentState{cfg.Staking}, nil
+// }
 
 // SealedEpoch resolves the most recent sealed epoch details.
 func (cst CurrentState) SealedEpoch() (Epoch, error) {

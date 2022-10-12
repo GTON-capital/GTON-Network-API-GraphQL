@@ -4,7 +4,6 @@ package resolvers
 import (
 	"fantom-api-graphql/internal/repository"
 	"fantom-api-graphql/internal/types"
-	"github.com/ethereum/go-ethereum/common"
 )
 
 // DefiConfiguration represents a resolvable DeFi Configuration instance.
@@ -32,24 +31,24 @@ func (rs *rootResolver) DefiConfiguration() (*DefiConfiguration, error) {
 
 // UniswapCoreFactory returns the address of the Uniswap factory contract
 // from the app configuration.
-func (dfc *DefiConfiguration) UniswapCoreFactory() common.Address {
-	return cfg.DeFi.Uniswap.Core
-}
+// func (dfc *DefiConfiguration) UniswapCoreFactory() common.Address {
+// 	return cfg.DeFi.Uniswap.Core
+// }
 
 // UniswapRouter returns the address of the Uniswap router contract
 // from the app configuration.
-func (dfc *DefiConfiguration) UniswapRouter() common.Address {
-	return cfg.DeFi.Uniswap.Router
-}
+// func (dfc *DefiConfiguration) UniswapRouter() common.Address {
+// 	return cfg.DeFi.Uniswap.Router
+// }
 
 // StakeTokenizerContract returns the address of the Stake Tokenizer contract
 // from the app configuration.
-func (dfc *DefiConfiguration) StakeTokenizerContract() common.Address {
-	return cfg.Staking.TokenizerContract
-}
+// func (dfc *DefiConfiguration) StakeTokenizerContract() common.Address {
+// 	return cfg.Staking.TokenizerContract
+// }
 
 // StakeTokenizedERC20Token returns the address of the ERC20 token representing
 // the tokenized locked stake.
-func (dfc *DefiConfiguration) StakeTokenizedERC20Token() common.Address {
-	return cfg.Staking.TokenizedStakeToken
-}
+// func (dfc *DefiConfiguration) StakeTokenizedERC20Token() common.Address {
+// 	return cfg.Staking.TokenizedStakeToken
+// }

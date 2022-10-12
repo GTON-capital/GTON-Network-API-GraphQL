@@ -18,14 +18,15 @@ import (
 	"fantom-api-graphql/internal/config"
 	"fantom-api-graphql/internal/logger"
 	"fantom-api-graphql/internal/repository/rpc/contracts"
+	"strings"
+	"sync"
+
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	etc "github.com/ethereum/go-ethereum/core/types"
 	eth "github.com/ethereum/go-ethereum/ethclient"
 	ftm "github.com/ethereum/go-ethereum/rpc"
 	"golang.org/x/sync/singleflight"
-	"strings"
-	"sync"
 )
 
 // rpcHeadProxyChannelCapacity represents the capacity of the new received blocks proxy channel.
@@ -74,12 +75,12 @@ func New(cfg *config.Config, log logger.Logger) (*FtmBridge, error) {
 
 		// special configuration options below this line
 		sigConfig:     &cfg.Signature,
-		sfcConfig:     &cfg.Staking,
-		uniswapConfig: &cfg.DeFi.Uniswap,
-		fMintCfg: fMintConfig{
-			addressProvider: cfg.DeFi.FMint.AddressProvider,
-		},
-		fLendCfg: fLendConfig{lendigPoolAddress: cfg.DeFi.FLend.LendingPool},
+		// sfcConfig:     &cfg.Staking,
+		// uniswapConfig: &cfg.DeFi.Uniswap,
+		// fMintCfg: fMintConfig{
+		// 	addressProvider: cfg.DeFi.FMint.AddressProvider,
+		// },
+		// fLendCfg: fLendConfig{lendigPoolAddress: cfg.DeFi.FLend.LendingPool},
 
 		// configure block observation loop
 		wg:       new(sync.WaitGroup),
