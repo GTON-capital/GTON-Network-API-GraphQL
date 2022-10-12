@@ -77,9 +77,9 @@ func New(cfg *config.Config, log logger.Logger) (*FtmBridge, error) {
 		sigConfig:     &cfg.Signature,
 		// sfcConfig:     &cfg.Staking,
 		// uniswapConfig: &cfg.DeFi.Uniswap,
-		fMintCfg: fMintConfig{
+		// fMintCfg: fMintConfig{
 		// 	addressProvider: cfg.DeFi.FMint.AddressProvider,
-		},
+		// },
 		// fLendCfg: fLendConfig{lendigPoolAddress: cfg.DeFi.FLend.LendingPool},
 
 		// configure block observation loop
@@ -92,7 +92,7 @@ func New(cfg *config.Config, log logger.Logger) (*FtmBridge, error) {
 	log.Noticef("using signature address %s", br.sigConfig.Address.String())
 
 	// add the bridge ref to the fMintCfg and return the instance
-	br.fMintCfg.bridge = br
+	// br.fMintCfg.bridge = br
 	br.run()
 	return br, nil
 }
