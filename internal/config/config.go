@@ -41,15 +41,6 @@ type Config struct {
 	// Repository configuration
 	Repository Repository `mapstructure:"repository"`
 
-	// Staking configuration
-	Staking Staking `mapstructure:"staking"`
-
-	// DeFi configuration
-	DeFi DeFi `mapstructure:"defi"`
-
-	// Governance configuration
-	Governance Governance `mapstructure:"governance"`
-
 	// TokenLogoFilePath contains the path to JSON file with the map
 	// of known ERC20 tokens to their logo URLs.
 	// The file will be loaded on configuration loading.

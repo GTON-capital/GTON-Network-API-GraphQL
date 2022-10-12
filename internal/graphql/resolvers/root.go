@@ -8,8 +8,9 @@ import (
 	"fantom-api-graphql/internal/svc"
 	"fantom-api-graphql/internal/types"
 	"fmt"
-	"golang.org/x/sync/singleflight"
 	"sync"
+
+	"golang.org/x/sync/singleflight"
 )
 
 const (

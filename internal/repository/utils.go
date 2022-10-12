@@ -12,13 +12,14 @@ import (
 	"encoding/json"
 	"fantom-api-graphql/internal/types"
 	"fmt"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
 	"io/ioutil"
 	"math"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 
 const (
@@ -71,22 +72,22 @@ func (p *proxy) GasEstimate(trx *struct {
 }
 
 // isValidPriceSymbol checks if the requested symbol is a valid price symbol we support
-func (p *proxy) isValidPriceSymbol(sym string) bool {
-	// check against supported price symbols from configuration
-	for _, vs := range p.cfg.DeFi.PriceSymbols {
-		if strings.EqualFold(vs, sym) {
-			return true
-		}
-	}
-	return false
-}
+// func (p *proxy) isValidPriceSymbol(sym string) bool {
+// 	// check against supported price symbols from configuration
+// 	for _, vs := range p.cfg.DeFi.PriceSymbols {
+// 		if strings.EqualFold(vs, sym) {
+// 			return true
+// 		}
+// 	}
+// 	return false
+// }
 
 // Price returns a price information for the given target symbol.
 func (p *proxy) Price(sym string) (types.Price, error) {
 	// check the symbol validity
-	if !p.isValidPriceSymbol(sym) {
-		return types.Price{}, fmt.Errorf("unknown price symbol requested")
-	}
+	// if !p.isValidPriceSymbol(sym) {
+	// 	return types.Price{}, fmt.Errorf("unknown price symbol requested")
+	// }
 
 	// inform what we do
 	p.log.Infof("loading price info for symbol [%s]", sym)

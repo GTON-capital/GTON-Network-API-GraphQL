@@ -4,6 +4,7 @@ package resolvers
 import (
 	"context"
 	"fantom-api-graphql/internal/types"
+
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
@@ -11,7 +12,7 @@ import (
 // ApiResolver represents the API interface expected to handle API access points
 type ApiResolver interface {
 	// State resolves current state of the blockchain.
-	State() (CurrentState, error)
+	// State() (CurrentState, error)
 
 	// SfcConfig resolves the current SFC configuration.
 	SfcConfig() SfcConfig
@@ -212,17 +213,17 @@ type ApiResolver interface {
 	}) hexutil.Big
 
 	// GovContracts resolves list of governance contracts details recognized by the API.
-	GovContracts() ([]*GovernanceContract, error)
+	// GovContracts() ([]*GovernanceContract, error)
 
 	// GovContract provides a specific Governance contract information by its address.
 	GovContract(struct{ Address common.Address }) (*GovernanceContract, error)
 
 	// GovProposals represents list of joined proposals across all the Governance contracts.
-	GovProposals(struct {
-		Cursor     *Cursor
-		Count      int32
-		ActiveOnly bool
-	}) (*GovernanceProposalList, error)
+	// GovProposals(struct {
+	// 	Cursor     *Cursor
+	// 	Count      int32
+	// 	ActiveOnly bool
+	// }) (*GovernanceProposalList, error)
 
 	// TrxVolume resolves list of daily aggregations
 	// of the network transaction flow.

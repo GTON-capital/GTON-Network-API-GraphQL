@@ -74,12 +74,12 @@ func New(cfg *config.Config, log logger.Logger) (*FtmBridge, error) {
 
 		// special configuration options below this line
 		sigConfig:     &cfg.Signature,
-		sfcConfig:     &cfg.Staking,
-		uniswapConfig: &cfg.DeFi.Uniswap,
-		fMintCfg: fMintConfig{
-			addressProvider: cfg.DeFi.FMint.AddressProvider,
-		},
-		fLendCfg: fLendConfig{lendigPoolAddress: cfg.DeFi.FLend.LendingPool},
+		// sfcConfig:     &cfg.Staking,
+		// uniswapConfig: &cfg.DeFi.Uniswap,
+		// fMintCfg: fMintConfig{
+		// 	addressProvider: cfg.DeFi.FMint.AddressProvider,
+		// },
+		// fLendCfg: fLendConfig{lendigPoolAddress: cfg.DeFi.FLend.LendingPool},
 
 		// configure block observation loop
 		wg:       new(sync.WaitGroup),

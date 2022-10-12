@@ -3,7 +3,7 @@ package resolvers
 
 import (
 	"fantom-api-graphql/internal/repository"
-	"fmt"
+
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
@@ -38,24 +38,24 @@ func (rs *rootResolver) GovContract(args struct{ Address common.Address }) (*Gov
 }
 
 // GovContracts resolves list of governance contracts details recognized by the API.
-func (rs *rootResolver) GovContracts() ([]*GovernanceContract, error) {
-	// do we know any contracts?
-	if nil == cfg.Governance.Contracts || 0 == len(cfg.Governance.Contracts) {
-		return nil, fmt.Errorf("no governance contracts recognized")
-	}
+// func (rs *rootResolver) GovContracts() ([]*GovernanceContract, error) {
+// 	// do we know any contracts?
+// 	if nil == cfg.Governance.Contracts || 0 == len(cfg.Governance.Contracts) {
+// 		return nil, fmt.Errorf("no governance contracts recognized")
+// 	}
 
-	// make the output array
-	res := make([]*GovernanceContract, len(cfg.Governance.Contracts))
-	for i, gc := range cfg.Governance.Contracts {
-		// add to the structure
-		res[i] = &GovernanceContract{
-			Name:    gc.Name,
-			Type:    gc.Type,
-			Address: gc.Address,
-		}
-	}
-	return res, nil
-}
+// 	// make the output array
+// 	res := make([]*GovernanceContract, len(cfg.Governance.Contracts))
+// 	for i, gc := range cfg.Governance.Contracts {
+// 		// add to the structure
+// 		res[i] = &GovernanceContract{
+// 			Name:    gc.Name,
+// 			Type:    gc.Type,
+// 			Address: gc.Address,
+// 		}
+// 	}
+// 	return res, nil
+// }
 
 // TotalProposals resolves the number of proposals registered within
 // the governance contract.

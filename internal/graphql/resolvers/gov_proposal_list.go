@@ -2,11 +2,10 @@
 package resolvers
 
 import (
-	"fantom-api-graphql/internal/repository"
 	"fantom-api-graphql/internal/types"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
 	"math/big"
+
+	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 
 // GovernanceProposalList represents resolvable list of governance
@@ -28,29 +27,29 @@ func NewGovernanceProposalList(gps *types.GovernanceProposalList) *GovernancePro
 
 // GovProposals resolves list of proposals across all the known governance
 // contracts in a browsable structure.
-func (rs *rootResolver) GovProposals(args struct {
-	Cursor     *Cursor
-	Count      int32
-	ActiveOnly bool
-}) (*GovernanceProposalList, error) {
-	// limit query size; the count can be either positive or negative
-	// this controls the loading direction
-	args.Count = listLimitCount(args.Count, listMaxEdgesPerRequest)
+// func (rs *rootResolver) GovProposals(args struct {
+// 	Cursor     *Cursor
+// 	Count      int32
+// 	ActiveOnly bool
+// }) (*GovernanceProposalList, error) {
+// 	// limit query size; the count can be either positive or negative
+// 	// this controls the loading direction
+// 	args.Count = listLimitCount(args.Count, listMaxEdgesPerRequest)
 
-	// prep list of governance contracts we are interested in
-	gcl := make([]common.Address, len(cfg.Governance.Contracts))
-	for i, gc := range cfg.Governance.Contracts {
-		gcl[i] = gc.Address
-	}
+// 	// prep list of governance contracts we are interested in
+// 	gcl := make([]common.Address, len(cfg.Governance.Contracts))
+// 	for i, gc := range cfg.Governance.Contracts {
+// 		gcl[i] = gc.Address
+// 	}
 
-	// get the list of all proposals
-	list, err := repository.R().GovernanceProposals(gcl, (*string)(args.Cursor), args.Count, args.ActiveOnly)
-	if err != nil {
-		return nil, err
-	}
+// 	// get the list of all proposals
+// 	list, err := repository.R().GovernanceProposals(gcl, (*string)(args.Cursor), args.Count, args.ActiveOnly)
+// 	if err != nil {
+// 		return nil, err
+// 	}
 
-	return NewGovernanceProposalList(list), nil
-}
+// 	return NewGovernanceProposalList(list), nil
+// }
 
 // TotalCount resolves the total number of governance proposals in the list.
 func (gpl *GovernanceProposalList) TotalCount() hexutil.Big {

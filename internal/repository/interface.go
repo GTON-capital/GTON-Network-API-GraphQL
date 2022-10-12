@@ -140,10 +140,10 @@ type Repository interface {
 	LockingAllowed() (bool, error)
 
 	// IsSfcContract returns true if the given address points to the SFC contract.
-	IsSfcContract(*common.Address) bool
+	// IsSfcContract(*common.Address) bool
 
 	// IsStiContract returns true if the given address points to the STI contract.
-	IsStiContract(*common.Address) bool
+	// IsStiContract(*common.Address) bool
 
 	// StoreTransaction adds a new incoming transaction from blockchain to the repository.
 	StoreTransaction(*types.Block, *types.Transaction) error
